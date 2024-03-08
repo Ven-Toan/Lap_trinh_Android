@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity_Bai4">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Bài 4 - Nhóm 4"
+        android:textColor="#EA0707"/>
+
+    <EditText
+        android:id="@+id/edtSo1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nhập số 1"
+        android:minHeight="48dp" />
+
+    <EditText
+        android:id="@+id/edtSo2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nhập số 2"
+        android:minHeight="48dp" />
+
+    <EditText
+        android:id="@+id/edtKetQua"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nhập kết quả"
+        android:minHeight="48dp" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnCong"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cộng"
+            android:onClick="PhepTinh"/>
+
+        <Button
+            android:id="@+id/btnTru"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Trừ"
+            android:onClick="PhepTinh"/>
+
+        <Button
+            android:id="@+id/btnNhan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nhân"
+            android:onClick="PhepTinh"/>
+
+        <Button
+            android:id="@+id/btnChia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chia"
+            android:onClick="PhepTinh"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textThongTin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:background="#4CAF50"
+        />
+
+</LinearLayout>
