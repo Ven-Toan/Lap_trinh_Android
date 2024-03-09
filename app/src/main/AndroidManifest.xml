@@ -15,7 +15,7 @@
         <activity
             android:name=".MainChiTietSanPham"
             android:exported="false" />
-        <activity
+        <activity1
             android:name=".MainActivity_Bai7"
             android:exported="true" />
         <activity

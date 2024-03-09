@@ -50,6 +50,7 @@ public class CustomAdapterSP extends ArrayAdapter {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, MainChiTietSanPham.class);
+                intent.putExtra("item",sp);
                 context.startActivity(intent);
             }
         });

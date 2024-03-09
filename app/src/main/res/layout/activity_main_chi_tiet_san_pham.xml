@@ -10,71 +10,55 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#E4CF12"
+        android:gravity="center"
         android:text="Chi tiết sản phẩm"
-        android:textStyle="bold"
         android:textColor="#E80707"
         android:textSize="30sp"
-        android:background="#E4CF12"
-        android:gravity="center"/>
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Nhập mã sản phẩm"
-        android:id="@+id/edtMaSP"/>
+        android:textStyle="bold" />
 
     <EditText
+        android:id="@+id/edtMaSP"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Nhập tên sản phẩm"
-        android:id="@+id/edtTenSP"/>
+        android:hint="Nhập mã sản phẩm" />
 
     <EditText
+        android:id="@+id/edtTenSP"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Nhập giá sản phẩm"
-        android:id="@+id/edtGiaSP"/>
+        android:hint="Nhập tên sản phẩm" />
+
+    <EditText
+        android:id="@+id/edtGiaSP"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nhập giá sản phẩm" />
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        <Spinner
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/spLoaiSP"
-            />
-
-        <ImageView
-            android:layout_width="100sp"
-            android:layout_height="100sp"
-            android:layout_gravity="right"
-            android:id="@+id/ivHinh"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:gravity="center"
-        >
+        android:orientation="horizontal">
 
         <Button
+            android:id="@+id/btnXoa"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Xoá"
-            android:id="@+id/btnXoa"/>
+            android:text="Xoá" />
+
         <Button
+            android:id="@+id/btnSua"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Sửa"
-            android:id="@+id/btnSua"/>
+            android:text="Sửa" />
+
         <Button
+            android:id="@+id/btnQuaylai"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Quay lại"
-            android:id="@+id/btnQuaylai"/>
+            android:text="Quay lại" />
 
     </LinearLayout>
 
