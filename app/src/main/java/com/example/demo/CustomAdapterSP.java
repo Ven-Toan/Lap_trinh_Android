@@ -1,10 +1,12 @@
 package com.example.demo;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -32,6 +34,7 @@ public class CustomAdapterSP extends ArrayAdapter {
         converView = LayoutInflater.from(context).inflate(resource,null);
         ImageView ivHinh = converView.findViewById(R.id.ivHinh);
         TextView tvTenSP = converView.findViewById(R.id.tvTenSP);
+        Button btnCHiTiet = converView.findViewById(R.id.btnChiTiet);
         SanPham sp = data.get(position);
         tvTenSP.setText(sp.getTenSP());
         if(sp.getLoaiSP().equals("Samsung")){
@@ -43,6 +46,13 @@ public class CustomAdapterSP extends ArrayAdapter {
         if(sp.getLoaiSP().equals("Nokia")){
             ivHinh.setImageResource(R.drawable.nokia);
         }
+        btnCHiTiet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, MainChiTietSanPham.class);
+                context.startActivity(intent);
+            }
+        });
         return converView;
     }
 }

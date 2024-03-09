@@ -38,6 +38,8 @@ public class MainActivity_Bai7 extends AppCompatActivity {
 
     int index = -1;
 
+    DatabaseSanPham databaseSanPham = new DatabaseSanPham(this);
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,6 +49,7 @@ public class MainActivity_Bai7 extends AppCompatActivity {
     }
 
     private void setEvent(){
+        databaseSanPham = new DatabaseSanPham(this);
         KhoiTao();
         adapter_lsp = new ArrayAdapter(this, android.R.layout.simple_list_item_1,data_lsp);
         spLoaiSP.setAdapter(adapter_lsp);
@@ -109,20 +112,22 @@ public class MainActivity_Bai7 extends AppCompatActivity {
         btnXoa.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            data_sp.remove(index);
-            adapter_sp.notifyDataSetChanged();
+            SanPham sp = new SanPham();
+            sp.setMaSP(edtMaSP.getText().toString());
+            databaseSanPham.XoaDL(sp);
+            DocDl();
         }
     });
         btnSua.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            SanPham sp = data_sp.get(index);
+            SanPham sp = new SanPham();
             sp.setMaSP(edtMaSP.getText().toString());
             sp.setTenSP(edtTenSP.getText().toString());
             sp.setGiaSP(edtGiaSP.getText().toString());
             sp.setLoaiSP(spLoaiSP.getSelectedItem().toString());
-            //data_sp.add(sp);
-            adapter_sp.notifyDataSetChanged();
+            databaseSanPham.SuaDL(sp);
+            DocDl();
         }
     });
         btnThoat.setOnClickListener(new View.OnClickListener() {
@@ -139,7 +144,13 @@ public class MainActivity_Bai7 extends AppCompatActivity {
         sp.setTenSP(edtTenSP.getText().toString());
         sp.setGiaSP(edtGiaSP.getText().toString());
         sp.setLoaiSP(spLoaiSP.getSelectedItem().toString());
-        data_sp.add(sp);
+        databaseSanPham.ThemDL(sp);
+        DocDl();
+    }
+
+    public void DocDl(){
+        data_sp.clear();
+        data_sp.addAll(databaseSanPham.DocDl());
         adapter_sp.notifyDataSetChanged();
     }
 
