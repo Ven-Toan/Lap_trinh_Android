@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity_Bai9">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#72B8D8"
+        android:gravity="center"
+        android:text="Nhóm 4: Bài 10"
+        android:textColor="#AD1457"
+        android:textSize="30sp" />
+
+    <EditText
+        android:id="@+id/edtThongBao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp" />
+    <Button
+        android:id="@+id/btnThongBao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Thông báo"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#72B8D8"
+        android:gravity="center"
+        android:text="Danh sách sản phẩm"
+        android:textColor="#AD1457"
+        android:textSize="30sp" />
+
+    <EditText
+        android:id="@+id/edtTenSanPham"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nhập tên sản phẩm"
+        android:minHeight="48dp" />
+
+    <EditText
+        android:id="@+id/edtGiaSanPham"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nhập giá sản phẩm"
+        android:minHeight="48dp" />
+    <Button
+        android:id="@+id/btnThem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Thêm"
+        android:layout_gravity="center"/>
+    <ListView
+        android:id="@+id/lvDanhSach"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+
+</LinearLayout>
