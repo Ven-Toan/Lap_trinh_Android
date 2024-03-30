@@ -2,9 +2,6 @@
 <project version="4">
   <component name="deploymentTargetDropDown">
     <value>
-      <entry key="MainActivity_Bai2">
-        <State />
-      </entry>
       <entry key="MainActivity_Bai4">
         <State />
       </entry>
@@ -28,6 +25,9 @@
         </State>
       </entry>
       <entry key="MainActivity_Bai7">
+        <State />
+      </entry>
+      <entry key="MainActivity_Bai9">
         <State />
       </entry>
       <entry key="app">
