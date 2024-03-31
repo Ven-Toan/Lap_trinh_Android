@@ -15,6 +15,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity_Bai10 extends AppCompatActivity {
@@ -24,7 +25,7 @@ public class MainActivity_Bai10 extends AppCompatActivity {
     EditText edtTenSanPham, edtGiaSanPham;
     Button btnThem;
     ListView lvDanhSach;
-    List<SanPham> data;
+    List<SanPham> data = new ArrayList<>();
     CustomAdapterSP adapterSP;
 
     @Override
@@ -73,9 +74,25 @@ public class MainActivity_Bai10 extends AppCompatActivity {
                 SanPham sanPham = new SanPham();
                 sanPham.setMaSP(sanphams.push().getKey());
                 sanPham.setTenSP(edtTenSanPham.getText().toString());
-                sanPham.setGiaSP(edtTenSanPham.getText().toString());
+                sanPham.setGiaSP(edtGiaSanPham.getText().toString());
                 sanPham.setLoaiSP("SamSung");
                 sanphams.child(sanPham.getMaSP()).setValue(sanPham);
+
+            }
+        });
+        sanphams.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                data.clear();
+                for(DataSnapshot item:snapshot.getChildren()){
+                    SanPham sanPham = item.getValue(SanPham.class);
+                    data.add(sanPham);
+                }
+                adapterSP.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
 
             }
         });
