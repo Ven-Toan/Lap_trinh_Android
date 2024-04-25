@@ -32,7 +32,6 @@ public class DatabaseSanPham extends SQLiteOpenHelper {
     }
 
     public void XoaDL(SanPham sp){
-
         SQLiteDatabase database = getWritableDatabase();
         String sql = "Delete from tbSanPham Where masp=?";
         database.execSQL(sql, new String[]{sp.getMaSP()});

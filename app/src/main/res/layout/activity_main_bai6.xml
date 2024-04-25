@@ -33,20 +33,20 @@
         android:orientation="vertical">
 
         <ImageView
-            android:id="@+id/ivHinh"
+            android:id="@+id/ivHinh1"
             android:layout_width="300dp"
             android:layout_height="300dp"
             android:src="@drawable/tat"
             />
 
     </LinearLayout>
-    <ToggleButton
+    <androidx.appcompat.widget.AppCompatButton
+        android:visibility="gone"
         android:id="@+id/tgbBongDen"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100sp"
+        android:layout_height="100sp"
         android:layout_gravity="center"
-        android:background="#B3A4A4"
-        android:text="TẮT"
+        android:background="@drawable/switch_on"
         android:textColor="@color/black"
         />
 

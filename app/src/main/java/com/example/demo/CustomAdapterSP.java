@@ -49,7 +49,7 @@ public class CustomAdapterSP extends ArrayAdapter {
         btnCHiTiet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, MainChiTietSanPham.class);
+                Intent intent = new Intent(context,MainChiTietSanPham.class);
                 intent.putExtra("item",sp);
                 context.startActivity(intent);
             }

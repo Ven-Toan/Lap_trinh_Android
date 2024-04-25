@@ -1,6 +1,7 @@
 package com.example.demo;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -9,6 +10,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class MainChiTietSanPham extends AppCompatActivity {
 
@@ -24,7 +28,10 @@ public class MainChiTietSanPham extends AppCompatActivity {
         setContentView(R.layout.activity_main_chi_tiet_san_pham);
         setControl();
         setEvent();
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true);
+        }
     }
 
     public void setEvent(){
@@ -38,7 +45,10 @@ public class MainChiTietSanPham extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 databaseSanPham.XoaDL(sp);
+                DatabaseReference myRef = FirebaseDatabase.getInstance().getReference("sanpham");
+                myRef.child(sp.getMaSP()).removeValue();
                 Toast.makeText(MainChiTietSanPham.this,"Xoá thành công!",Toast.LENGTH_SHORT).show();
+                finish();
             }
         });
 
@@ -48,7 +58,10 @@ public class MainChiTietSanPham extends AppCompatActivity {
                 sp.setTenSP(edtTenSP.getText().toString());
                 sp.setGiaSP(edtGiaSP.getText().toString());
                 databaseSanPham.SuaDL(sp);
+                DatabaseReference myRef = FirebaseDatabase.getInstance().getReference("sanpham");
+                myRef.child(sp.getMaSP()).setValue(sp);
                 Toast.makeText(MainChiTietSanPham.this,"Sửa thành công!",Toast.LENGTH_SHORT).show();
+                finish();
             }
         });
 

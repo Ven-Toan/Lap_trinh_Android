@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Switch;
@@ -17,7 +18,7 @@ public class MainActivity_Bai6 extends AppCompatActivity {
 
     ImageView ivHinh;
 
-    ToggleButton tgbBongDen;
+    Button tgbBongDen;
 
 
     @Override
@@ -34,24 +35,29 @@ public class MainActivity_Bai6 extends AppCompatActivity {
             public void onClick(View v) {
                 if(swBongDen.isChecked()){
                     llBongDen.setVisibility(View.VISIBLE);
+                    ivHinh.setImageResource(R.drawable.bat);
+                    tgbBongDen.setVisibility(View.VISIBLE);
                 }
                 else {
                     llBongDen.setVisibility(View.GONE);
                     ivHinh.setImageResource(R.drawable.tat);
-                    tgbBongDen.setChecked(false);
+                    tgbBongDen.setVisibility(View.GONE);
                 }
             }
         });
         tgbBongDen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(tgbBongDen.isChecked()){
+                if(tgbBongDen.getText().equals(" ")){
+                    tgbBongDen.setText("  ");
                     ivHinh.setImageResource(R.drawable.bat);
+                    tgbBongDen.setBackground(getDrawable(R.drawable.switch_on));
                 }
                 else {
+                    tgbBongDen.setText(" ");
                     ivHinh.setImageResource(R.drawable.tat);
+                    tgbBongDen.setBackground(getDrawable(R.drawable.switch_off));
                 }
-
             }
         });
     }
@@ -59,7 +65,7 @@ public class MainActivity_Bai6 extends AppCompatActivity {
     private void setControl(){
         swBongDen = findViewById(R.id.swBongDen);
         llBongDen = findViewById(R.id.llBongDen);
-        ivHinh = findViewById(R.id.ivHinh);
+        ivHinh = findViewById(R.id.ivHinh1);
         tgbBongDen = findViewById(R.id.tgbBongDen);
     }
 }

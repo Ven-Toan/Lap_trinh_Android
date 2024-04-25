@@ -43,7 +43,7 @@ public class MainActivity_Bai9 extends AppCompatActivity {
     }
 
     private void setEvent() {
-        adapterUser = new CustomAdapterUser(this,R.layout.layout_item_user,data);
+        adapterUser = new CustomAdapterUser(this,R.layout.  layout_item_user,data);
         lvDanhSach.setAdapter(adapterUser);
         getData();
         //getData2();
